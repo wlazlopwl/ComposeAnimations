@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.appdevpwl.composeanimations.view.AnimatedVisibilityScreen
 import com.appdevpwl.composeanimations.view.HomeScreen
 
 @Composable
@@ -17,7 +18,12 @@ fun SetupNavGraph(
         composable(
             route = Screen.Home.route
         ) {
-            HomeScreen()
+            HomeScreen(navController)
+        }
+        composable(
+            route = Screen.AnimatedVisibility.route
+        ) {
+            AnimatedVisibilityScreen()
         }
     }
 }

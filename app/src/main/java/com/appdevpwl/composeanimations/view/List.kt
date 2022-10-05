@@ -11,9 +11,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun MenuItem(text: String, height: Dp) {
+fun MenuItem(text: String, height: Dp, onClick: ()-> Unit) {
     OutlinedButton(
-        onClick = { /*TODO*/ },
+        onClick = { onClick() },
         modifier = Modifier
             .fillMaxWidth()
             .height(height)
@@ -26,5 +26,5 @@ fun MenuItem(text: String, height: Dp) {
 @Preview
 @Composable
 fun MenuItemPreview() {
-    MenuItem("Przeciąganie", 50.dp)
+    MenuItem("Przeciąganie", 50.dp){}
 }
