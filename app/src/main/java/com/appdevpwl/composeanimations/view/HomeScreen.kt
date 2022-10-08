@@ -18,7 +18,10 @@ fun HomeScreen(navController: NavController) {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
-        val menus = listOf("Animated Visibility", "Test2")
+        val menus = listOf(
+            "Animated Visibility",
+            "Animated Content"
+        )
 
         Menu(menus = menus, navController)
     }
@@ -34,9 +37,10 @@ fun Menu(
             MenuItem(
                 text = item,
                 height = 50.dp
-            ){
-                when(index){
-                    0-> navController.navigate(Screen.AnimatedVisibility.route)
+            ) {
+                when (index) {
+                    0 -> navController.navigate(Screen.AnimatedVisibility.route)
+                    1 -> navController.navigate(Screen.AnimatedContent.route)
                 }
             }
         }
