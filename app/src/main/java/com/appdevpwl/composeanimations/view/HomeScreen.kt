@@ -21,7 +21,8 @@ fun HomeScreen(navController: NavController) {
         val menus = listOf(
             "Animated Visibility",
             "Animated Content",
-            "Crossfade"
+            "Crossfade",
+            "Animate*asState"
         )
 
         Menu(menus = menus, navController)
