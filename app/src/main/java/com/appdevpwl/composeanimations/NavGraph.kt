@@ -4,10 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.appdevpwl.composeanimations.view.AnimatedContentScreen
-import com.appdevpwl.composeanimations.view.AnimatedVisibilityScreen
-import com.appdevpwl.composeanimations.view.CrossfadeScreen
-import com.appdevpwl.composeanimations.view.HomeScreen
+import com.appdevpwl.composeanimations.view.*
 
 @Composable
 fun SetupNavGraph(
@@ -36,6 +33,11 @@ fun SetupNavGraph(
             route = Screen.Crossfade.route
         ) {
             CrossfadeScreen()
+        }
+        composable(
+            route = Screen.AnimateAsState.route
+        ) {
+            AnimateAsStateScreen()
         }
     }
 }

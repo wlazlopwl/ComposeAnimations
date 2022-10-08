@@ -43,6 +43,7 @@ fun Menu(
                     0 -> navController.navigate(Screen.AnimatedVisibility.route)
                     1 -> navController.navigate(Screen.AnimatedContent.route)
                     2 -> navController.navigate(Screen.Crossfade.route)
+                    3 -> navController.navigate(Screen.AnimateAsState.route)
                 }
             }
         }
