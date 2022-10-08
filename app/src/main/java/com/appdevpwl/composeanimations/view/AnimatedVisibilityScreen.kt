@@ -3,7 +3,6 @@ package com.appdevpwl.composeanimations.view
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
@@ -36,7 +35,10 @@ fun AnimatedVisibilityScreen() {
             ),
             exit = fadeOut()
         ) {
-            Box(modifier = Modifier.width(60.dp).height(30.dp).background(Color.Gray))
+            Box(modifier = Modifier
+                .width(60.dp)
+                .height(30.dp)
+                .background(Color.Gray))
             Text(
                 "Hello",
                 Modifier
@@ -44,14 +46,10 @@ fun AnimatedVisibilityScreen() {
                     .height(200.dp)
             )
         }
-
-        Button(
-            onClick = { visible = !visible },
-            modifier = Modifier.wrapContentSize(),
-//            colors = ButtonDefaults.textButtonColors(Color.White)
-        ) {
-            Text(text = "Animuj")
+        StartAnimateButton {
+            visible = !visible
         }
+
     }
 }
 
