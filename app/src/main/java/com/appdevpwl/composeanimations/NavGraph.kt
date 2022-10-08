@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.appdevpwl.composeanimations.view.AnimatedContentScreen
 import com.appdevpwl.composeanimations.view.AnimatedVisibilityScreen
+import com.appdevpwl.composeanimations.view.CrossfadeScreen
 import com.appdevpwl.composeanimations.view.HomeScreen
 
 @Composable
@@ -30,6 +31,11 @@ fun SetupNavGraph(
             route = Screen.AnimatedContent.route
         ) {
             AnimatedContentScreen()
+        }
+        composable(
+            route = Screen.Crossfade.route
+        ) {
+            CrossfadeScreen()
         }
     }
 }

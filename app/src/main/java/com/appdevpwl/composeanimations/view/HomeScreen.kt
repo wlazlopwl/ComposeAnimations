@@ -20,7 +20,8 @@ fun HomeScreen(navController: NavController) {
     ) {
         val menus = listOf(
             "Animated Visibility",
-            "Animated Content"
+            "Animated Content",
+            "Crossfade"
         )
 
         Menu(menus = menus, navController)
@@ -41,6 +42,7 @@ fun Menu(
                 when (index) {
                     0 -> navController.navigate(Screen.AnimatedVisibility.route)
                     1 -> navController.navigate(Screen.AnimatedContent.route)
+                    2 -> navController.navigate(Screen.Crossfade.route)
                 }
             }
         }
