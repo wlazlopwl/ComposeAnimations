@@ -19,6 +19,7 @@ fun AnimateAsStateScreen() {
     var animationStateDamping by remember { mutableStateOf(AnimationState.Start) }
     var animationStateStiffness by remember { mutableStateOf(AnimationState.Start) }
     var animationStateTweenEasing by remember { mutableStateOf(AnimationState.Start) }
+    var animationStateKeyFrames by remember { mutableStateOf(AnimationState.Start) }
 
     Column(
         modifier = Modifier.verticalScroll(rememberScrollState())
@@ -40,8 +41,6 @@ fun AnimateAsStateScreen() {
             }
         }
 
-
-
         Text(text = "spring()", fontSize = 18.sp)
         Text(text = "StiffnessLow")
         CreateRowSpringStiffness(animationStateStiffness, Spring.StiffnessLow)
@@ -60,6 +59,7 @@ fun AnimateAsStateScreen() {
         }
 
         val tween = 1000
+
         Text(text = "tween, easing", fontSize = 18.sp)
         Text(text = "tween: 1000, easing: LinearEasing ")
         CreateRowSpringTweenEasing(animationStateTweenEasing, tween, easing = LinearEasing)
@@ -78,6 +78,19 @@ fun AnimateAsStateScreen() {
         }
 
 
+        Text(text = "Keyframes", fontSize = 18.sp)
+        Text(text = "200.dp.at(750) ")
+        CreateRowKeyFrames(animationStateKeyFrames, tween)
+
+
+        Box {
+            StartAnimateButton {
+                animationStateKeyFrames = when (animationStateKeyFrames) {
+                    AnimationState.Start -> AnimationState.Finish
+                    AnimationState.Finish -> AnimationState.Start
+                }
+            }
+        }
     }
 }
 
@@ -85,7 +98,7 @@ fun AnimateAsStateScreen() {
 private fun CreateRowSpringDamping(animationState: AnimationState, dampingRatio: Float) {
     val offsetAnimation: Dp by animateDpAsState(
         if (animationState == AnimationState.Start) 0.dp else 375.dp,
-        spring(dampingRatio = dampingRatio)
+        spring(dampingRatio = dampingRatio),
     )
     Box(Modifier.padding(top = 10.dp, bottom = 10.dp)) {
         Box(
@@ -134,6 +147,46 @@ private fun CreateRowSpringTweenEasing(animationState: AnimationState, tween: In
     val offsetAnimation: Dp by animateDpAsState(
         if (animationState == AnimationState.Start) 0.dp else 375.dp,
         tween(durationMillis = tween, easing = easing)
+    )
+    Box(Modifier.padding(top = 10.dp, bottom = 10.dp)) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(20.dp)
+                .background(Color.LightGray)
+        ) {
+        }
+        Box(
+            modifier = Modifier
+                .size(20.dp)
+                .absoluteOffset(x = offsetAnimation)
+                .background(Color.Gray)
+        ) {
+        }
+    }
+}
+
+@Composable
+private fun CreateRowKeyFrames(animationState: AnimationState, tween: Int) {
+    val offsetAnimation: Dp by animateDpAsState(
+        if (animationState == AnimationState.Start) 0.dp else 375.dp,
+        keyframes {
+            durationMillis = tween
+            200.dp.at(750)
+        }
+
+    /*
+    * example
+    *
+    *
+    * keyframes {
+        durationMillis = 1000
+        50.dp.at(20).with(LinearEasing)
+        200.dp.at(600).with(LinearOutSlowInEasing)
+        250.dp.at(700).with(FastOutSlowInEasing)
+    }
+    *
+    * */
     )
     Box(Modifier.padding(top = 10.dp, bottom = 10.dp)) {
         Box(
