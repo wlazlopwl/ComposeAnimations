@@ -59,6 +59,7 @@ fun InfiniteTransitionScreen() {
         )
 
         Column {
+            Title(text = "RepeatMode.Reverse")
             Row {
                 Canvas(
                     modifier = Modifier
@@ -79,6 +80,7 @@ fun InfiniteTransitionScreen() {
                 }
             }
 
+            Title(text = "RepeatMode.Restart")
             Row {
                 Canvas(
                     modifier = Modifier

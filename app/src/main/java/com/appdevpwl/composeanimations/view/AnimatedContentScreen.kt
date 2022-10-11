@@ -44,13 +44,11 @@ fun AnimatedContentScreen() {
             }
         }
         Box {
-
             StartAnimateButton {
             }
         }
 
     }
-
 }
 
 

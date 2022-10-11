@@ -11,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 
 
 @Composable
@@ -24,7 +23,7 @@ fun AnimateAsStateScreen() {
     Column(
         modifier = Modifier.verticalScroll(rememberScrollState())
     ) {
-        Text(text = "spring()", fontSize = 18.sp)
+        Title(text = "spring()")
         Text(text = "DampingRatioLowBouncy")
         CreateRowSpringDamping(animationStateDamping, Spring.DampingRatioLowBouncy)
         Text(text = "DampingRatioMediumBouncy")
@@ -41,7 +40,7 @@ fun AnimateAsStateScreen() {
             }
         }
 
-        Text(text = "spring()", fontSize = 18.sp)
+        Title(text = "spring()")
         Text(text = "StiffnessLow")
         CreateRowSpringStiffness(animationStateStiffness, Spring.StiffnessLow)
         Text(text = "StiffnessMedium")
@@ -60,7 +59,7 @@ fun AnimateAsStateScreen() {
 
         val tween = 1000
 
-        Text(text = "tween, easing", fontSize = 18.sp)
+        Title(text = "tween, easing")
         Text(text = "tween: 1000, easing: LinearEasing ")
         CreateRowSpringTweenEasing(animationStateTweenEasing, tween, easing = LinearEasing)
         Text(text = "tween: 1000, easing: LinearOutSlowInEasing ")
@@ -78,10 +77,9 @@ fun AnimateAsStateScreen() {
         }
 
 
-        Text(text = "Keyframes", fontSize = 18.sp)
+        Title(text = "Keyframes")
         Text(text = "200.dp.at(750) ")
         CreateRowKeyFrames(animationStateKeyFrames, tween)
-
 
         Box {
             StartAnimateButton {
@@ -175,18 +173,18 @@ private fun CreateRowKeyFrames(animationState: AnimationState, tween: Int) {
             200.dp.at(750)
         }
 
-    /*
-    * example
-    *
-    *
-    * keyframes {
-        durationMillis = 1000
-        50.dp.at(20).with(LinearEasing)
-        200.dp.at(600).with(LinearOutSlowInEasing)
-        250.dp.at(700).with(FastOutSlowInEasing)
-    }
-    *
-    * */
+        /*
+        * example
+        *
+        *
+        * keyframes {
+            durationMillis = 1000
+            50.dp.at(20).with(LinearEasing)
+            200.dp.at(600).with(LinearOutSlowInEasing)
+            250.dp.at(700).with(FastOutSlowInEasing)
+        }
+        *
+        * */
     )
     Box(Modifier.padding(top = 10.dp, bottom = 10.dp)) {
         Box(

@@ -35,10 +35,12 @@ fun AnimatedVisibilityScreen() {
             ),
             exit = fadeOut()
         ) {
-            Box(modifier = Modifier
-                .width(60.dp)
-                .height(30.dp)
-                .background(Color.Gray))
+            Box(
+                modifier = Modifier
+                    .width(60.dp)
+                    .height(30.dp)
+                    .background(Color.Gray)
+            )
             Text(
                 "Hello",
                 Modifier
