@@ -39,6 +39,11 @@ fun SetupNavGraph(
         ) {
             AnimateAsStateScreen()
         }
+        composable(
+            route = Screen.InfiniteScreen.route
+        ) {
+            InfiniteTransitionScreen()
+        }
     }
 }
 

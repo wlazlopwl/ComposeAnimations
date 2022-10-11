@@ -22,7 +22,8 @@ fun HomeScreen(navController: NavController) {
             "Animated Visibility",
             "Animated Content",
             "Crossfade",
-            "Animate*asState"
+            "Animate*asState",
+            "rememberInfiniteScreen"
         )
 
         Menu(menus = menus, navController)
@@ -45,6 +46,7 @@ fun Menu(
                     1 -> navController.navigate(Screen.AnimatedContent.route)
                     2 -> navController.navigate(Screen.Crossfade.route)
                     3 -> navController.navigate(Screen.AnimateAsState.route)
+                    4 -> navController.navigate(Screen.InfiniteScreen.route)
                 }
             }
         }
