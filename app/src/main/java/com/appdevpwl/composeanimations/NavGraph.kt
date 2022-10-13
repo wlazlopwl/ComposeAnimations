@@ -44,6 +44,11 @@ fun SetupNavGraph(
         ) {
             InfiniteTransitionScreen()
         }
+        composable(
+            route = Screen.UpdateTransitionScreen.route
+        ) {
+            UpdateTransitionScreen()
+        }
     }
 }
 

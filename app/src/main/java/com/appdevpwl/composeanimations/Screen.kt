@@ -7,5 +7,6 @@ sealed class Screen(val route: String){
     object Crossfade: Screen(route = "crossfade_screen")
     object AnimateAsState: Screen(route = "animate_as_state_screen")
     object InfiniteScreen: Screen(route = "infinite_transition_screen")
+    object UpdateTransitionScreen: Screen(route = "update_transition_screen")
 
 }

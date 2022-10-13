@@ -23,9 +23,9 @@ fun HomeScreen(navController: NavController) {
             "Animated Content",
             "Crossfade",
             "Animate*asState",
-            "rememberInfiniteScreen"
+            "rememberInfiniteScreen",
+            "UpdateTransition"
         )
-
         Menu(menus = menus, navController)
     }
 }
@@ -47,6 +47,7 @@ fun Menu(
                     2 -> navController.navigate(Screen.Crossfade.route)
                     3 -> navController.navigate(Screen.AnimateAsState.route)
                     4 -> navController.navigate(Screen.InfiniteScreen.route)
+                    5 -> navController.navigate(Screen.UpdateTransitionScreen.route)
                 }
             }
         }
