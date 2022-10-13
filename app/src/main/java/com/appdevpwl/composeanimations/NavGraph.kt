@@ -27,7 +27,7 @@ fun SetupNavGraph(
         composable(
             route = Screen.AnimatedContent.route
         ) {
-            AnimatedContentScreen()
+            AnimatedContentSizeScreen()
         }
         composable(
             route = Screen.Crossfade.route

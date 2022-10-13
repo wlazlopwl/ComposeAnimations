@@ -16,7 +16,7 @@ import com.appdevpwl.composeanimations.R
 
 
 @Composable
-fun AnimatedContentScreen() {
+fun AnimatedContentSizeScreen() {
     Column {
         Box {
             Column {
