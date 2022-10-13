@@ -1,6 +1,7 @@
 package com.appdevpwl.composeanimations.view
 
 import androidx.compose.animation.animateColor
+import androidx.compose.animation.core.animateOffset
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.Canvas
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
@@ -26,7 +28,6 @@ fun UpdateTransitionScreen() {
     )
 
     val animatedColor: Color by transition.animateColor(
-
         transitionSpec = {
             tween(2000)
         }, label = ""
@@ -36,9 +37,23 @@ fun UpdateTransitionScreen() {
             Position.FIRST -> Color.Green
             Position.SECOND -> Color.Blue
             Position.THIRD -> Color.Gray
-            Position.FOURTH -> Color.Yellow
+            Position.FOURTH -> Color.Black
         }
 
+    }
+
+    val animatedOffset: Offset by transition.animateOffset(
+        transitionSpec = {
+            tween(2000)
+        }, label = ""
+
+    ) { rectPosition ->
+        when (rectPosition) {
+            Position.FIRST -> Offset(0F, 0F)
+            Position.SECOND -> Offset(20F, 20F)
+            Position.THIRD -> Offset(40F, 40F)
+            Position.FOURTH -> Offset(50F, 50F)
+        }
     }
 
     Column {
@@ -50,7 +65,10 @@ fun UpdateTransitionScreen() {
                 .size(100.dp)
 
         ) {
-            drawRect(color = animatedColor)
+            drawRect(
+                color = animatedColor,
+                topLeft = animatedOffset
+            )
         }
 
         StartAnimateButton {
