@@ -39,7 +39,6 @@ fun UpdateTransitionScreen() {
             Position.THIRD -> Color.Gray
             Position.FOURTH -> Color.Black
         }
-
     }
 
     val animatedOffset: Offset by transition.animateOffset(
@@ -96,7 +95,6 @@ fun UpdateTransitionScreen() {
             }
         }
     }
-
 }
 
 enum class Position(title: String) {

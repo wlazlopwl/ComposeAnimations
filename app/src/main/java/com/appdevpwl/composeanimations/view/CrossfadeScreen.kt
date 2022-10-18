@@ -23,7 +23,6 @@ fun CrossfadeScreen() {
 
     Column {
         Box {
-
             Crossfade(
                 targetState = state,
                 animationSpec = tween(3000, easing = FastOutSlowInEasing)
@@ -36,7 +35,6 @@ fun CrossfadeScreen() {
                                 .height(200.dp)
                                 .background(Color.Yellow)
                         )
-
                     }
                     true -> {
                         Box(
@@ -47,15 +45,12 @@ fun CrossfadeScreen() {
                         )
                     }
                 }
-
             }
-
         }
         StartAnimateButton {
             state = !state
         }
     }
-
 }
 
 

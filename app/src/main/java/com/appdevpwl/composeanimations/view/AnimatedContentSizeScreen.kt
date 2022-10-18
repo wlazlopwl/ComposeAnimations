@@ -37,17 +37,11 @@ fun AnimatedContentSizeScreen() {
                             tween(2000)
                         )
                 )
-
                 Button(onClick = { expanded = !expanded }) {
                     Text(if (expanded) "Hide" else "Show")
                 }
             }
         }
-        Box {
-            StartAnimateButton {
-            }
-        }
-
     }
 }
 

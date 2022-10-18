@@ -4,7 +4,6 @@ import androidx.compose.animation.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,13 +23,10 @@ fun AnimatedVisibilityScreen() {
         AnimatedVisibility(
             visible = visible,
             enter = slideInVertically {
-                // Slide in from 40 dp from the top.
                 with(density) { -40.dp.roundToPx() }
             } + expandVertically(
-                // Expand from the top.
                 expandFrom = Alignment.Top
             ) + fadeIn(
-                // Fade in with the initial alpha of 0.3f.
                 initialAlpha = 0.5f
             ),
             exit = fadeOut()
@@ -41,17 +37,10 @@ fun AnimatedVisibilityScreen() {
                     .height(30.dp)
                     .background(Color.Gray)
             )
-            Text(
-                "Hello",
-                Modifier
-                    .fillMaxWidth()
-                    .height(200.dp)
-            )
         }
         StartAnimateButton {
             visible = !visible
         }
-
     }
 }
 

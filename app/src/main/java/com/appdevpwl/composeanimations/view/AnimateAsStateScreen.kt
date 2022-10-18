@@ -76,7 +76,6 @@ fun AnimateAsStateScreen() {
             }
         }
 
-
         Title(text = "Keyframes")
         Text(text = "200.dp.at(750) ")
         CreateRowKeyFrames(animationStateKeyFrames, tween)
@@ -104,15 +103,13 @@ private fun CreateRowSpringDamping(animationState: AnimationState, dampingRatio:
                 .fillMaxWidth()
                 .height(20.dp)
                 .background(Color.LightGray)
-        ) {
-        }
+        ) {}
         Box(
             modifier = Modifier
                 .size(20.dp)
                 .absoluteOffset(x = offsetAnimation)
                 .background(Color.Gray)
-        ) {
-        }
+        ) {}
     }
 }
 
@@ -128,15 +125,13 @@ private fun CreateRowSpringStiffness(animationState: AnimationState, stiffness: 
                 .fillMaxWidth()
                 .height(20.dp)
                 .background(Color.LightGray)
-        ) {
-        }
+        ) {}
         Box(
             modifier = Modifier
                 .size(20.dp)
                 .absoluteOffset(x = offsetAnimation)
                 .background(Color.Gray)
-        ) {
-        }
+        ) {}
     }
 }
 
@@ -152,15 +147,13 @@ private fun CreateRowSpringTweenEasing(animationState: AnimationState, tween: In
                 .fillMaxWidth()
                 .height(20.dp)
                 .background(Color.LightGray)
-        ) {
-        }
+        ) {}
         Box(
             modifier = Modifier
                 .size(20.dp)
                 .absoluteOffset(x = offsetAnimation)
                 .background(Color.Gray)
-        ) {
-        }
+        ) {}
     }
 }
 
@@ -192,15 +185,13 @@ private fun CreateRowKeyFrames(animationState: AnimationState, tween: Int) {
                 .fillMaxWidth()
                 .height(20.dp)
                 .background(Color.LightGray)
-        ) {
-        }
+        ) {}
         Box(
             modifier = Modifier
                 .size(20.dp)
                 .absoluteOffset(x = offsetAnimation)
                 .background(Color.Gray)
-        ) {
-        }
+        ) {}
     }
 }
 
