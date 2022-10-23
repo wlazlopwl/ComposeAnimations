@@ -25,22 +25,20 @@ fun CrossfadeScreen() {
         Box {
             Crossfade(
                 targetState = state,
-                animationSpec = tween(3000, easing = FastOutSlowInEasing)
-            ) {
+                animationSpec = tween(
+                    3000,
+                    easing = FastOutSlowInEasing
+                )) {
                 when (it) {
-                    false -> {
-                        Box(
-                            modifier = Modifier
+                    false -> { Box(modifier = Modifier
                                 .fillMaxWidth()
                                 .height(200.dp)
                                 .background(Color.Yellow)
                         )
                     }
-                    true -> {
-                        Box(
-                            modifier = Modifier
+                    true -> { Box(modifier = Modifier
                                 .fillMaxWidth()
-                                .height(200.dp)
+                                .height(300.dp)
                                 .background(Color.Green)
                         )
                     }
