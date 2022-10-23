@@ -38,7 +38,7 @@ fun AnimatedContentSizeScreen() {
                         )
                 )
                 Button(onClick = { expanded = !expanded }) {
-                    Text(if (expanded) "Hide" else "Show")
+                    Text(if (expanded) "Ukryj" else "Pokaż")
                 }
             }
         }
